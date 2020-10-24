@@ -20,12 +20,18 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
+    - Vector1_13f5afaacb2d4dadbbb30717b762fed0: 1
     - Vector1_1515f93504ea481198195224aaeb964d: 2
     - Vector1_2ea2b6d8548d4a60ab02511a4fa4c72a: 1
-    - Vector1_75b95adf4cbc43768293223622a97b08: 50
+    - Vector1_5eefa6fc3fd048daac4f336aba2422b8: 0
+    - Vector1_75b95adf4cbc43768293223622a97b08: 15
     - Vector1_7b62ef5308fc410e888faeae1dbbc1b3: 0
     - Vector1_7dd1faf404164b0abc6332532f7544af: 3
+    - Vector1_7e9b6ddd51f64659ab9785dd10ed991e: 1
+    - Vector1_837777d9bb0a4fc1bc5c411aefb574f2: -0.8
+    - Vector1_d98bfd3a47a242899e62ea6b7a4d9d0a: 1
     - Vector1_f631192acb264229bd975ca92b24ed67: 0.2
     m_Colors:
+    - Color_9ff6e2c764ce4fe0aaab04986832be8a: {r: 1, g: 0.854902, b: 0.654902, a: 0}
     - Vector2_9f26ee06155b43e58e680fc62413822e: {r: 0.44, g: 14.38, b: 0, a: 0}
   m_BuildTextureStacks: []
