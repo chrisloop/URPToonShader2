@@ -20,10 +20,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _Density: 0.25
+    - _Density: 0.004
     - _Size: 0.5
     - _Thickness: 0.1
     m_Colors:
     - Color_8F2E6D74: {r: 1, g: 1, b: 1, a: 0}
-    - _Tiling: {r: 5, g: 5, b: 0, a: 0}
+    - _Tiling: {r: 772.6, g: 200, b: 0, a: 0}
   m_BuildTextureStacks: []

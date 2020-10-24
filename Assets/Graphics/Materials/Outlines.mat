@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Detail
+  m_Name: Outlines
   m_Shader: {fileID: -6465566751694194690, guid: 392da9e43863db54b8d3210406585b16, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,6 +19,13 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - Vector1_1515f93504ea481198195224aaeb964d: 2
+    - Vector1_2ea2b6d8548d4a60ab02511a4fa4c72a: 1
+    - Vector1_75b95adf4cbc43768293223622a97b08: 50
+    - Vector1_7b62ef5308fc410e888faeae1dbbc1b3: 0
+    - Vector1_7dd1faf404164b0abc6332532f7544af: 3
+    - Vector1_f631192acb264229bd975ca92b24ed67: 0.2
+    m_Colors:
+    - Vector2_9f26ee06155b43e58e680fc62413822e: {r: 0.44, g: 14.38, b: 0, a: 0}
   m_BuildTextureStacks: []

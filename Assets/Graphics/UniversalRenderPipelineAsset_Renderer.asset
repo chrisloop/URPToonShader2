@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: Alpha Detail
+  m_Name: Outlines
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: Alpha Detail
+    passTag: Outlines
     Event: 550
     filterSettings:
       RenderQueueType: 0

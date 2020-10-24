@@ -20,7 +20,7 @@ float3 DecodeNormal(float4 enc)
     return n;
 }
 
-void OutlineObject_float(float2 UV, float OutlineThickness, float DepthSensitivity, float NormalsSensitivity, out float Outline, out float SceneDepth)
+void OutlineObject_float(float2 UV, float OutlineThickness, float DepthSensitivity, float NormalsSensitivity, out float3 Original, out float Outline, out float SceneDepth)
 {
     float halfScaleFloor = floor(OutlineThickness * 0.5);
     float halfScaleCeil = ceil(OutlineThickness * 0.5);
@@ -28,6 +28,7 @@ void OutlineObject_float(float2 UV, float OutlineThickness, float DepthSensitivi
     float2 uvSamples[4];
     float depthSamples[4];
     float3 normalSamples[4];
+    float4 colorSamples[4];
 
     uvSamples[0] = UV - float2(_CameraDepthTexture_TexelSize.x, _CameraDepthTexture_TexelSize.y) * halfScaleFloor;
     uvSamples[1] = UV + float2(_CameraDepthTexture_TexelSize.x, _CameraDepthTexture_TexelSize.y) * halfScaleCeil;
@@ -38,6 +39,7 @@ void OutlineObject_float(float2 UV, float OutlineThickness, float DepthSensitivi
     {
         depthSamples[i] = SAMPLE_TEXTURE2D(_CameraDepthTexture, sampler_CameraDepthTexture, uvSamples[i]).r;
         normalSamples[i] = DecodeNormal(SAMPLE_TEXTURE2D(_CameraDepthNormalsTexture, sampler_CameraDepthNormalsTexture, uvSamples[i]));
+        colorSamples[i] = SAMPLE_TEXTURE2D(_CameraOpaqueTexture, sampler_CameraOpaqueTexture, uvSamples[i]);
     }
 
     // Depth
@@ -53,10 +55,14 @@ void OutlineObject_float(float2 UV, float OutlineThickness, float DepthSensitivi
     float edgeNormal = sqrt(dot(normalFiniteDifference0, normalFiniteDifference0) + dot(normalFiniteDifference1, normalFiniteDifference1));
     edgeNormal = edgeNormal > (1/NormalsSensitivity) ? 1 : 0;
 
-    float edge = max(edgeDepth, edgeNormal);
-    Outline = edge;
+    // Alpha
+    float4 colorFiniteDifference0 = colorSamples[1] - colorSamples[0];
+    float4 colorFiniteDifference1 = colorSamples[3] - colorSamples[2];
+    float edgeDetail= step(0.01, sqrt(dot(colorFiniteDifference0.a, colorFiniteDifference0.a) + dot(colorFiniteDifference1.a, colorFiniteDifference1.a)));
 
+    Outline = 1 - clamp(max(max(edgeDepth, edgeNormal), edgeDetail), 0, 1);
 	SceneDepth = SAMPLE_TEXTURE2D(_CameraDepthTexture, sampler_CameraDepthTexture, UV).r;
+    Original = SAMPLE_TEXTURE2D(_CameraOpaqueTexture, sampler_CameraOpaqueTexture, UV);
 }
 
 void AlphaDetail_float(float2 UV, float OutlineThickness, out float3 Original, out float Detail)
