@@ -605,8 +605,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 691.0,
-            "y": -1077.0
+            "x": 858.0000610351563,
+            "y": -1060.0
         },
         "m_Blocks": [
             {
@@ -622,8 +622,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 691.0,
-            "y": -859.9999389648438
+            "x": 858.0000610351563,
+            "y": -843.0
         },
         "m_Blocks": [
             {
@@ -2075,8 +2075,8 @@
     "m_StageCapability": 2,
     "m_Value": {
         "x": 0.0,
-        "y": 1.0,
-        "z": 0.9394505023956299
+        "y": 0.0,
+        "z": 0.0
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -3195,7 +3195,7 @@
     "m_ActiveSubTarget": {
         "m_Id": "303150c0bbe14c378fb9eaecdd8d59be"
     },
-    "m_SurfaceType": 1,
+    "m_SurfaceType": 0,
     "m_AlphaMode": 0,
     "m_TwoSided": false,
     "m_AlphaClip": false,
